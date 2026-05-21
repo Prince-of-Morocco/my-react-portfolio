@@ -12,24 +12,24 @@ import s3 from "../../public/s3.png?url";
 import ec from "../../public/ec.png?url";
 
 function Skills() {
-  const cardItem = [
+ const cardItem = [
     {
       id: 1,
       logo: linux,
       name: "Linux",
     },
     {
-      id: 3,
-      logo: java,
-      name: "Java",
+      id: 2,
+      logo: py,
+      name: "Python",
     },
     {
-      id: 4,
-      logo: ec,
-      name: "Amazon EC2",
+      id: 3,
+      logo: git,
+      name: "Git",
     },
-  ];
 
+  ];
   return (
     <div
       name="Skills"
