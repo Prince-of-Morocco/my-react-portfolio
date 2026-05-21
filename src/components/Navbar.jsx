@@ -1,23 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import dev from "../../public/dev.png?url";
+
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
+
 import { Link } from "react-scroll";
 
 function Navbar() {
 
   const [menu, setMenu] = useState(false);
-  const [showTagline, setShowTagline] = useState(false);
-
-  useEffect(() => {
-
-    const timer = setTimeout(() => {
-      setShowTagline(true);
-    }, 300);
-
-    return () => clearTimeout(timer);
-
-  }, []);
 
   const navItems = [
     {
@@ -54,81 +45,85 @@ function Navbar() {
   return (
     <>
 
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50 bg-white">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
 
-        <div className="flex justify-between items-center h-16">
+        <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-20">
 
-          {/* Logo + Title */}
-          <div className="flex space-x-3 items-center">
+          <div className="flex justify-between items-center h-full">
 
-            <img
-              src={dev}
-              className="h-12 w-12 rounded-full"
-              alt="Logo"
-            />
+            {/* Logo + Branding */}
+            <div className="flex items-center space-x-3">
 
-            <div>
+              <img
+                src={dev}
+                className="h-14 w-14 rounded-full object-cover"
+                alt="Logo"
+              />
 
-              <h1 className="font-semibold text-2xl cursor-pointer leading-tight">
-                Bharat
-                <span className="text-green-500">
-                  h
-                </span>
-              </h1>
+              <div>
 
-              {/* Academic Tagline */}
-              <p
-                className={`text-xs md:text-sm font-medium text-gray-600 transition-all duration-1000 ease-out transform ${
-                  showTagline
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-2"
-                }`}
-              >
-                AI • Computer Vision • Intelligent Systems
-              </p>
+                {/* Name */}
+                <h1 className="font-bold text-3xl leading-tight cursor-pointer">
+
+                  Bharat
+                  <span className="text-green-500">
+                    h
+                  </span>
+
+                </h1>
+
+                {/* Academic Tagline */}
+                <p className="text-sm text-gray-600 font-medium">
+
+                  AI • Computer Vision • Intelligent Systems
+
+                </p>
+
+              </div>
 
             </div>
-          </div>
 
-          {/* Desktop Navbar */}
-          <div>
+            {/* Desktop Navbar */}
+            <div>
 
-            <ul className="hidden md:flex space-x-8">
+              <ul className="hidden md:flex items-center space-x-8">
 
-              {navItems.map(({ id, text, target }) => (
+                {navItems.map(({ id, text, target }) => (
 
-                <li
-                  key={id}
-                  className="hover:scale-105 duration-200 font-semibold cursor-pointer"
-                >
-
-                  <Link
-                    to={target}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
+                  <li
+                    key={id}
+                    className="font-semibold cursor-pointer hover:text-green-600 hover:scale-105 duration-200"
                   >
-                    {text}
-                  </Link>
 
-                </li>
+                    <Link
+                      to={target}
+                      smooth={true}
+                      duration={500}
+                      offset={-80}
+                      spy={true}
+                    >
+                      {text}
+                    </Link>
 
-              ))}
+                  </li>
 
-            </ul>
+                ))}
 
-            {/* Mobile Menu Button */}
-            <div
-              onClick={() => setMenu(!menu)}
-              className="md:hidden cursor-pointer"
-            >
+              </ul>
 
-              {menu ? (
-                <IoCloseSharp size={24} />
-              ) : (
-                <AiOutlineMenu size={24} />
-              )}
+              {/* Mobile Menu Icon */}
+              <div
+                className="md:hidden cursor-pointer"
+                onClick={() => setMenu(!menu)}
+              >
+
+                {menu ? (
+                  <IoCloseSharp size={26} />
+                ) : (
+                  <AiOutlineMenu size={26} />
+                )}
+
+              </div>
 
             </div>
 
@@ -139,24 +134,24 @@ function Navbar() {
         {/* Mobile Navbar */}
         {menu && (
 
-          <div className="bg-white">
+          <div className="md:hidden bg-white shadow-lg">
 
-            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-6 text-xl">
+            <ul className="flex flex-col items-center justify-center py-10 space-y-6 text-lg font-semibold">
 
               {navItems.map(({ id, text, target }) => (
 
                 <li
                   key={id}
-                  className="hover:scale-105 duration-200 font-semibold cursor-pointer"
+                  className="cursor-pointer hover:text-green-600 duration-200"
                 >
 
                   <Link
-                    onClick={() => setMenu(false)}
                     to={target}
                     smooth={true}
                     duration={500}
-                    offset={-70}
-                    activeClass="active"
+                    offset={-80}
+                    spy={true}
+                    onClick={() => setMenu(false)}
                   >
                     {text}
                   </Link>
