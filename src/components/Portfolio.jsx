@@ -1,77 +1,107 @@
-import React from 'react';
-import java from "../../public/java.png";
-import python from "../../public/python.webp";
-import uipath from "../../public/Ui_Path.jpg";
-import express from "../../public/express.png";
-import reactjs from "../../public/reactjs.png";
-import nodejs from "../../public/node.png";
+import React from "react";
 import django from "../../public/django.jpg";
+import demo from "../../public/demo.png";
 
 function Portfolio() {
-    const cardItem = [
-        {
-          id: 1,
-          logo: uipath,
-          name: "Ui Path",
-          description: "Table Extraction Project.",
-          link: "https://github.com/Prince-of-Morocco/Table-Extraction-Uipath",
-        },
-        // {
-        //   id: 2,
-        //   logo: express,
-        //   name: "Express",
-        //   description: "A minimal and flexible Node.js web application framework.",
-        //   link: "https://youtube.com/",
-        // },
-        // {
-        //   id: 3,
-        //   logo: reactjs,
-        //   name: "ReactJS",
-        //   description: "A JavaScript library for building user interfaces.",
-        // },
-        // {
-        //   id: 4,
-        //   logo: nodejs,
-        //   name: "NodeJS",
-        //   description: "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
-        // },
-        {
-          id: 5,
-          logo: django,
-          name: "django",
-          description: "Weapon Detection Project using YOLOv8 Algorithm.",
-          link: "https://github.com/Prince-of-Morocco",
-        },
-        // {
-        //   id: 6,
-        //   logo: java,
-        //   name: "Java",
-        //   description: "A versatile and widely-used programming language.",
-        // },
-      ];
+
+  const projects = [
+    {
+      id: 1,
+      image: demo,
+      title: "AI Smart Surveillance System",
+
+      description:
+        "A real-time AI-based surveillance and weapon detection system developed using YOLOv8, OpenCV and Django. The system performs live monitoring, detects weapons in video streams, and sends automated alerts through integrated notification services.",
+
+      technologies:
+        "Python • YOLOv8 • OpenCV • Django",
+
+      github:
+        "https://github.com/Prince-of-Morocco/AI-Smart-Surveillance-System",
+
+      demo:
+        "https://youtu.be/VJB6Uxs6crg",
+    },
+  ];
 
   return (
-    <div name='Portfolio'className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10">
-        <div className="text-center mb-10">
-            <h1 className="text-3xl font-bold mb-5">Portfolio</h1>
-            <span className="underline font-semibold">Featured Projects</span>
-        </div>
-        <div className="flex justify-center gap-8 flex-wrap">
-            {
-                cardItem.map(({id, logo, name, description, link}) => (
-                    <div className="flex flex-col items-center md:w-[300px] md:h-[300px] border-[2px] rounded-lg shadow-lg p-4 cursor-pointer hover:scale-110 duration-300" key={id}>
-                        <img src={logo} className="w-[120px] h-[120px] mb-4 rounded-full border-[2px]" alt={`${name} logo`} />
-                        <div className="text-center mb-2">
-                            <div className="font-bold text-xl">{name}</div>
-                            <p className="text-gray-700">{description}</p>
-                        </div>
-                        <a href={link} target="_blank" rel="noopener noreferrer">
-                        <button className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">Source Code</button>
-                        </a>
-                    </div>
-                ))
-            }
-        </div>
+    <div
+      name="Portfolio"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-16"
+    >
+      <div className="text-center mb-12">
+        <h1 className="text-3xl font-bold mb-4">
+          Research & Projects
+        </h1>
+
+        <p className="text-gray-600">
+          Selected academic and technical projects focused on Artificial
+          Intelligence, Computer Vision, and intelligent systems.
+        </p>
+      </div>
+
+      <div className="flex justify-center flex-wrap gap-10">
+
+        {projects.map(
+          ({
+            id,
+            image,
+            title,
+            description,
+            technologies,
+            github,
+            demo,
+          }) => (
+
+            <div
+              key={id}
+              className="max-w-[420px] border rounded-xl shadow-md p-5 hover:shadow-xl duration-300"
+            >
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-[220px] object-cover rounded-lg mb-5"
+              />
+
+              <h2 className="text-2xl font-bold mb-3">
+                {title}
+              </h2>
+
+              <p className="text-gray-700 text-justify mb-4 leading-relaxed">
+                {description}
+              </p>
+
+              <p className="text-sm text-green-700 font-semibold mb-5">
+                {technologies}
+              </p>
+
+              <div className="flex gap-4">
+
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold">
+                    Source Code
+                  </button>
+                </a>
+
+                <a
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="border border-green-600 text-green-700 hover:bg-green-50 px-4 py-2 rounded-lg font-semibold">
+                    Live Demo
+                  </button>
+                </a>
+
+              </div>
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 }
