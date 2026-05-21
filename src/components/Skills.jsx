@@ -10,6 +10,8 @@ import springBoot from "../../public/springBoot.jpg";
 import sql from "../../public/sql.png?url";
 import s3 from "../../public/s3.png?url";
 import ec from "../../public/ec.png?url";
+import py from "../../public/py.png?url";
+import git from "../../public/git.png?url";
 
 function Skills() {
  const cardItem = [
