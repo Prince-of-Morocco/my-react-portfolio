@@ -8,7 +8,7 @@ function Portfolio() {
     {
       id: 1,
       image: demo,
-      title: "AI Smart Surveillance System",
+      title: "AI - Driven Smart Surveillance for Weapon Detection Using YOLOv8",
 
       description:
         "A real-time AI-based surveillance and weapon detection system developed using YOLOv8, OpenCV and Django. The system performs live monitoring, detects weapons in video streams, and sends automated alerts through integrated notification services.",
@@ -17,7 +17,7 @@ function Portfolio() {
         "Python • YOLOv8 • OpenCV • Django",
 
       github:
-        "https://github.com/Prince-of-Morocco/AI-Smart-Surveillance-System",
+        "https://github.com/Prince-of-Morocco/AI-Driven-Smart-Surveillance-for-Weapon-Detection-Using-YOLOv8",
 
       demo:
         "https://youtu.be/VJB6Uxs6crg",
