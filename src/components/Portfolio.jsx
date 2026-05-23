@@ -1,17 +1,16 @@
 import React from "react";
-import django from "../../public/django.jpg";
-import demo from "../../public/demo.png";
+import thumb from "../../public/thumb.png";
 
 function Portfolio() {
-
   const projects = [
     {
       id: 1,
-      image: demo,
-      title: "AI - Driven Smart Surveillance for Weapon Detection Using YOLOv8",
+      image: thumb,
+
+      title: "AI Driven Smart Surveillance for Weapon Detection Using YOLOv8",
 
       description:
-        "A real-time AI-based surveillance and weapon detection system developed using YOLOv8, OpenCV and Django. The system performs live monitoring, detects weapons in video streams, and sends automated alerts through integrated notification services.",
+        "A real-time AI-based surveillance and weapon detection system developed using YOLOv8, OpenCV, and Django. The system performs live monitoring, detects weapons in video streams, and sends automated alerts through integrated notification services.",
 
       technologies:
         "Python • YOLOv8 • OpenCV • Django",
@@ -20,28 +19,29 @@ function Portfolio() {
         "https://github.com/Prince-of-Morocco/AI-Driven-Smart-Surveillance-for-Weapon-Detection-Using-YOLOv8",
 
       demo:
-        "https://youtu.be/VJB6Uxs6crg",
+        "https://youtu.be/vkhxaQHgLU0",
     },
   ];
 
   return (
     <div
       name="Portfolio"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-16"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-16"
     >
-      <div className="text-center mb-12">
-        <h1 className="text-3xl font-bold mb-4">
+      {/* Heading Section */}
+      <div className="text-center mb-14">
+        <h1 className="text-4xl font-bold mb-4">
           Research & Projects
         </h1>
 
-        <p className="text-gray-600">
+        <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Selected academic and technical projects focused on Artificial
           Intelligence, Computer Vision, and intelligent systems.
         </p>
       </div>
 
+      {/* Projects Section */}
       <div className="flex justify-center flex-wrap gap-10">
-
         {projects.map(
           ({
             id,
@@ -52,51 +52,55 @@ function Portfolio() {
             github,
             demo,
           }) => (
-
             <div
               key={id}
-              className="max-w-[420px] border rounded-xl shadow-md p-5 hover:shadow-xl duration-300"
+              className="max-w-[420px] bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden"
             >
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-[220px] object-cover rounded-lg mb-5"
-              />
+              {/* Image */}
+              <div className="bg-gray-100 p-4">
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full max-h-[280px] object-contain rounded-xl"
+                />
+              </div>
 
-              <h2 className="text-2xl font-bold mb-3">
-                {title}
-              </h2>
+              {/* Content */}
+              <div className="p-6">
+                <h2 className="text-2xl font-bold leading-snug mb-4">
+                  {title}
+                </h2>
 
-              <p className="text-gray-700 text-justify mb-4 leading-relaxed">
-                {description}
-              </p>
+                <p className="text-gray-600 text-justify leading-relaxed mb-5">
+                  {description}
+                </p>
 
-              <p className="text-sm text-green-700 font-semibold mb-5">
-                {technologies}
-              </p>
+                <p className="text-sm font-semibold text-green-700 mb-6">
+                  {technologies}
+                </p>
 
-              <div className="flex gap-4">
+                {/* Buttons */}
+                <div className="flex gap-4 flex-wrap">
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition duration-300">
+                      Source Code
+                    </button>
+                  </a>
 
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold">
-                    Source Code
-                  </button>
-                </a>
-
-                <a
-                  href={demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="border border-green-600 text-green-700 hover:bg-green-50 px-4 py-2 rounded-lg font-semibold">
-                    Live Demo
-                  </button>
-                </a>
-
+                  <a
+                    href={demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="border border-green-600 text-green-700 hover:bg-green-50 px-5 py-2 rounded-lg font-semibold transition duration-300">
+                      Live Demo
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           )
