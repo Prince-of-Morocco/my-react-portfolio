@@ -31,7 +31,7 @@ function Home() {
                 strings={[
                   "Artificial Intelligence",
                   "Computer Vision",
-                  "Cybersecurity",
+                  "Machine Learning",
                 ]}
                 typeSpeed={50}
                 backSpeed={40}
