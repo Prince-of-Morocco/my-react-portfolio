@@ -16,7 +16,7 @@ function Portfolio() {
         "Python • YOLOv8 • OpenCV • Django",
 
       github:
-        "https://github.com/Prince-of-Morocco/AI-Driven-Smart-Surveillance-for-Weapon-Detection-Using-YOLOv8",
+        "https://github.com/bharathraj1024/AI-Driven-Smart-Surveillance-for-Weapon-Detection-Using-YOLOv8",
 
       demo:
         "https://youtu.be/vkhxaQHgLU0",
