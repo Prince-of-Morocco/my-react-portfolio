@@ -57,7 +57,7 @@ function Home() {
             <div className="flex flex-wrap gap-4 pt-2">
 
               <a
-                href="https://github.com/Prince-of-Morocco"
+                href="https://github.com/bharathraj1024"
                 target="_blank"
                 rel="noreferrer"
               >
