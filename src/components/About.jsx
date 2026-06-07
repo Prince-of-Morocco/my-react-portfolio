@@ -34,7 +34,7 @@ function About() {
           <br />
 
           <strong>B.Sc Computer Science & Cognitive Systems</strong> — Loyola
-          Academy (2020 – 2023)
+          Academy Degree and PG College (2020 – 2023)
           <br />
 
         </span>
